@@ -1,104 +1,103 @@
 <!DOCTYPE html>
-
-<html lang="zh">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>你的家庭清理师</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>あなたの家庭清掃師</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f7f7f7;
+      background-color: #f9f9f9;
       color: #333;
     }
     header {
-      background: #2c3e50;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    nav {
-      background: #34495e;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 1.2rem 2rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
     }
-    nav a {
-      color: white;
-      padding: 1rem;
-      text-decoration: none;
+    header h1 {
+      font-size: 1.5rem;
+      color: #222;
     }
-    nav a:hover {
-      background: #2c3e50;
+    nav button {
+      background: none;
+      border: none;
+      color: #0078c8;
+      font-size: 0.95rem;
+      margin-left: 1rem;
+      cursor: pointer;
     }
-    section {
-      padding: 2rem 1rem;
+    main {
       max-width: 960px;
-      margin: auto;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .product-card {
-      background: white;
-      border-radius: 8px;
+      margin: 2rem auto;
       padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+    h2 {
+      color: #0078c8;
+      font-size: 1.3rem;
+      border-left: 4px solid #0078c8;
+      padding-left: 0.5rem;
+    }
+    ul {
+      line-height: 1.8;
+      padding-left: 1.2rem;
+    }
+    .lang { display: none; }
     footer {
-      background: #34495e;
-      color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>你的家庭清洁师</h1>
-    <p>“物品再利用”就是“产品的重新利用”。
-
-</p>
+    <h1>あなたの家庭清掃師</h1>
+    <nav>
+      <button onclick="setLang('ja')">日本語</button>
+      <button onclick="setLang('zh')">中文</button>
+    </nav>
   </header>
-  <nav>
-    <a href="#about">关于我们</a>
-    <a href="#products">产品介绍</a>
-    <a href="#contact">联系我们</a>
-  </nav>
-  <section id="about">
-    <h2>关于我们</h2>
-    <p>我们专注于家庭旧物的回收与再利用，为您的生活带来洁净与便利。“物品再利用”就是“产品的重新利用”。
 
-</p>
-  </section>
-  <section id="products">
-    <h2>产品介绍</h2>
-    <div class="products">
-      <div class="product-card">
-        <h3></h3>
-        <p>回收古董</p>
-      </div>
-      <div class="product-card">
-        <h3>回收电器</h3>
-        <p>保护环境，绿色回收</p>
-      </div>
-      <div class="product-card">
-        <h3>回收衣物</h3>
-        <p>省力设计，适合全屋使用。</p>
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <h2>联系我们</h2>
-    <p>邮箱：cleanmaster@example.com</p>
-    <p>电话：+86 123 4567 8901</p>
-  </section>
+  <main>
+    <section id="ja" class="lang">
+      <h2>私たちのサービス</h2>
+      <ul>
+        <li>家庭の整理・片付けサービス</li>
+        <li>不用品の仕分け・回収とリサイクル</li>
+        <li>骨董品や価値ある品の買取と再販</li>
+        <li>環境に配慮した処理と再利用提案</li>
+      </ul>
+      <p>私たちは日本の「もったいない」精神を大切にし、物の再生と空間の再構築をサポートします。</p>
+    </section>
+
+    <section id="zh" class="lang">
+      <h2>我们的服务</h2>
+      <ul>
+        <li>家庭空间整理与清理服务</li>
+        <li>废弃物分类、回收与再利用</li>
+        <li>古董与有价值物品的回收与二次销售</li>
+        <li>环保处理与再利用建议</li>
+      </ul>
+      <p>我们尊重日本“物尽其用”的理念，致力于为家庭提供清洁、空间重塑与资源再生的解决方案。</p>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 你的家庭清洁师. 保留所有权利。</p>
+    &copy; 2025 あなたの家庭清掃師 - All Rights Reserved.
   </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+      document.getElementById(lang).style.display = 'block';
+    }
+    setLang('ja'); // 默认日文
+  </script>
 </body>
 </html>
-
