@@ -1,103 +1,84 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>あなたの家庭清掃師</title>
+  <title>你的家庭清洁师</title>
   <style>
     body {
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: "Helvetica Neue", sans-serif;
       margin: 0;
-      background-color: #f9f9f9;
+      padding: 0;
+      background-color: #f8f8f8;
       color: #333;
     }
     header {
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      padding: 1.2rem 2rem;
+      background-color: #005bab;
+      color: white;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      font-size: 1.5rem;
-      color: #222;
-    }
-    nav button {
-      background: none;
+    .lang-toggle button {
+      background: white;
+      color: #005bab;
       border: none;
-      color: #0078c8;
-      font-size: 0.95rem;
-      margin-left: 1rem;
+      margin-left: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
       cursor: pointer;
     }
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
-    h2 {
-      color: #0078c8;
-      font-size: 1.3rem;
-      border-left: 4px solid #0078c8;
-      padding-left: 0.5rem;
-    }
-    ul {
-      line-height: 1.8;
-      padding-left: 1.2rem;
-    }
-    .lang { display: none; }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-      color: #777;
+    h1 {
+      color: #005bab;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>あなたの家庭清掃師</h1>
-    <nav>
-      <button onclick="setLang('ja')">日本語</button>
+    <h1>你的家庭清洁师</h1>
+    <div class="lang-toggle">
       <button onclick="setLang('zh')">中文</button>
-    </nav>
+      <button onclick="setLang('jp')">日本語</button>
+    </div>
   </header>
 
-  <main>
-    <section id="ja" class="lang">
-      <h2>私たちのサービス</h2>
-      <ul>
-        <li>家庭の整理・片付けサービス</li>
-        <li>不用品の仕分け・回収とリサイクル</li>
-        <li>骨董品や価値ある品の買取と再販</li>
-        <li>環境に配慮した処理と再利用提案</li>
-      </ul>
-      <p>私たちは日本の「もったいない」精神を大切にし、物の再生と空間の再構築をサポートします。</p>
-    </section>
-
-    <section id="zh" class="lang">
+  <section>
+    <div id="zh">
       <h2>我们的服务</h2>
+      <p>我们专注于日本的二手经济服务：</p>
       <ul>
-        <li>家庭空间整理与清理服务</li>
-        <li>废弃物分类、回收与再利用</li>
-        <li>古董与有价值物品的回收与二次销售</li>
-        <li>环保处理与再利用建议</li>
+        <li>家庭空间清理</li>
+        <li>废弃物分类与回收再利用</li>
+        <li>古董与二手物品回收、整理与再销售</li>
+        <li>环保处理与资源循环</li>
       </ul>
-      <p>我们尊重日本“物尽其用”的理念，致力于为家庭提供清洁、空间重塑与资源再生的解决方案。</p>
-    </section>
-  </main>
+      <p>我们的目标是帮助客户节省空间，赋予闲置物品新生命。</p>
+    </div>
 
-  <footer>
-    &copy; 2025 あなたの家庭清掃師 - All Rights Reserved.
-  </footer>
+    <div id="jp" style="display:none;">
+      <h2>私たちのサービス</h2>
+      <p>私たちは日本のリユース経済に特化しています：</p>
+      <ul>
+        <li>家庭の片付け・整理整頓</li>
+        <li>不用品の回収とリサイクル</li>
+        <li>骨董品や中古品の買取・再販</li>
+        <li>環境に優しい処理と資源の循環利用</li>
+      </ul>
+      <p>スペースの有効活用と、モノに新しい命を吹き込むお手伝いをします。</p>
+    </div>
+  </section>
 
   <script>
     function setLang(lang) {
-      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-      document.getElementById(lang).style.display = 'block';
+      document.getElementById('zh').style.display = (lang === 'zh') ? 'block' : 'none';
+      document.getElementById('jp').style.display = (lang === 'jp') ? 'block' : 'none';
     }
-    setLang('ja'); // 默认日文
   </script>
 </body>
 </html>
